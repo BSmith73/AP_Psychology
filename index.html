@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mr. Smith's AP Psychology Review Activities</title>
+    <!-- Tailwind CSS CDN for quick styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f4f8; /* Light blue-gray background */
+            color: #334155; /* Darker text color */
+            display: flex; /* Use flexbox for vertical stacking */
+            flex-direction: column; /* Stack items vertically */
+            align-items: center; /* Center items horizontally */
+            min-height: 100vh; /* Full viewport height */
+            margin: 0;
+            box-sizing: border-box; /* Include padding in element's total width and height */
+        }
+        h1 {
+            color: #1e293b;
+            font-weight: 900; /* Even bolder for maximum impact */
+            font-size: 4.5rem; /* Significantly larger heading */
+            letter-spacing: -0.04em; /* Slightly tighter spacing for large text */
+            line-height: 1.05; /* Tighter line height for large text */
+            text-align: center; /* Ensure title is centered */
+            width: 100%; /* Make it span full width */
+            background-color: #e0f2fe; /* Light blue background for the header section */
+            padding: 1.5rem 1rem; /* Padding inside the header section */
+            margin-bottom: 2.5rem; /* Space below the header, before the container */
+            box-shadow: 0 5px 15px -3px rgba(0, 0, 0, 0.08); /* Subtle shadow for the header */
+            animation: fadeIn 1s ease-out; /* Simple fade-in animation */
+        }
+        .container {
+            max-width: 800px;
+            padding: 2.5rem;
+            background-color: #ffffff;
+            border-radius: 1.5rem; /* More rounded corners */
+            box-shadow: 0 15px 30px -5px rgba(0, 0, 0, 0.1), 0 6px 12px -3px rgba(0, 0, 0, 0.08); /* Stronger shadow */
+            text-align: center;
+            animation: fadeIn 1s ease-out; /* Simple fade-in animation */
+            width: 100%; /* Ensure container takes full available width up to max-width */
+            margin: 0 1rem; /* Horizontal margin for responsiveness */
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        p {
+            font-size: 1.15rem; /* Slightly larger paragraph text */
+            margin-bottom: 3rem; /* Increased space below the text for the button */
+            line-height: 1.6;
+        }
+        .activity-link {
+            display: inline-block;
+            background-color: #2563eb; /* Blue button */
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 0.75rem; /* Rounded button */
+            font-weight: 700;
+            font-size: 1.1rem;
+            text-decoration: none;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+        .activity-link:hover {
+            background-color: #1d4ed8;
+            transform: translateY(-3px); /* Lift effect on hover */
+        }
+        .activity-link:active {
+            transform: translateY(0);
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 640px) {
+            h1 {
+                font-size: 3rem; /* Adjusted for smaller screens */
+                letter-spacing: -0.02em;
+                margin-bottom: 2rem; /* Adjusted margin for smaller screens */
+                padding: 1rem 0.75rem; /* Less padding on small screens */
+            }
+            .container {
+                padding: 1.5rem;
+                margin: 0 1rem; /* Ensure horizontal margin on small screens */
+            }
+            p {
+                font-size: 1rem;
+                margin-bottom: 2.5rem; /* Adjusted for smaller screens */
+            }
+            .activity-link {
+                padding: 0.8rem 1.5rem;
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to Mr. Smith's AP Psychology Review Activities!</h1>
+    <div class="container">
+        <p>
+            Dive into these interactive resources designed to help you master key concepts and prepare for your AP Psychology exam. Let's make learning fun and effective!
+        </p>
+        <a href="brain_regions_worksheet.html" class="activity-link">
+            Start: Interactive Brain Regions & Functions Worksheet
+        </a>
+        <!-- You can add more links to other activities here -->
+        <!--
+        <a href="another_activity.html" class="activity-link mt-4">
+            Another Great Activity
+        </a>
+        -->
+    </div>
+</body>
+</html>

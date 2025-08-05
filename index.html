@@ -11,93 +11,151 @@
             font-family: 'Inter', sans-serif;
             background-color: #f0f4f8; /* Light blue-gray background */
             color: #334155; /* Darker text color */
-            display: flex; /* Use flexbox for vertical stacking */
-            flex-direction: column; /* Stack items vertically */
-            align-items: center; /* Center items horizontally */
-            min-height: 100vh; /* Full viewport height */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
             margin: 0;
-            box-sizing: border-box; /* Include padding in element's total width and height */
+            box-sizing: border-box;
+            line-height: 1.6; /* Default line height for readability */
         }
-        h1 {
-            color: #1e293b;
-            font-weight: 900; /* Even bolder for maximum impact */
-            font-size: 4.5rem; /* Significantly larger heading */
-            letter-spacing: -0.04em; /* Slightly tighter spacing for large text */
+
+        /* Header Styling */
+        .header-section {
+            width: 100%;
+            background: linear-gradient(to right, #60a5fa, #3b82f6); /* Blue gradient */
+            color: white;
+            padding: 2.5rem 1.5rem; /* More vertical padding */
+            text-align: center;
+            box-shadow: 0 8px 20px -5px rgba(0, 0, 0, 0.2); /* Stronger shadow for header */
+            margin-bottom: 3rem; /* Space below header */
+            animation: slideInFromTop 0.8s ease-out; /* Animation for header */
+        }
+
+        .header-section h1 {
+            font-weight: 900; /* Extra bold */
+            font-size: 3.8rem; /* Smaller heading */
+            letter-spacing: -0.04em; /* Tighter letter spacing */
             line-height: 1.05; /* Tighter line height for large text */
-            text-align: center; /* Ensure title is centered */
-            width: 100%; /* Make it span full width */
-            background-color: #e0f2fe; /* Light blue background for the header section */
-            padding: 1.5rem 1rem; /* Padding inside the header section */
-            margin-bottom: 2.5rem; /* Space below the header, before the container */
-            box-shadow: 0 5px 15px -3px rgba(0, 0, 0, 0.08); /* Subtle shadow for the header */
-            animation: fadeIn 1s ease-out; /* Simple fade-in animation */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Subtle text shadow */
+            margin: 0; /* Remove default margin */
         }
-        .container {
+
+        /* Main Content Container */
+        .content-container {
             max-width: 800px;
             padding: 2.5rem;
             background-color: #ffffff;
-            border-radius: 1.5rem; /* More rounded corners */
-            box-shadow: 0 15px 30px -5px rgba(0, 0, 0, 0.1), 0 6px 12px -3px rgba(0, 0, 0, 0.08); /* Stronger shadow */
+            border-radius: 1.5rem;
+            box-shadow: 0 15px 30px -5px rgba(0, 0, 0, 0.1), 0 6px 12px -3px rgba(0, 0, 0, 0.08);
             text-align: center;
-            animation: fadeIn 1s ease-out; /* Simple fade-in animation */
-            width: 100%; /* Ensure container takes full available width up to max-width */
-            margin: 0 1rem; /* Horizontal margin for responsiveness */
+            animation: fadeIn 1s ease-out; /* Fade-in for content */
+            width: 100%;
+            margin: 0 1.5rem; /* Horizontal margin for responsiveness */
+            flex-grow: 1; /* Allow container to grow and push footer down if needed */
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* Center content vertically within its box */
         }
+
+        .content-container p {
+            font-size: 1.25rem; /* Larger paragraph text */
+            margin-bottom: 3.5rem; /* More space below text for button */
+            color: #475569; /* Slightly softer text color */
+        }
+
+        /* Button Styling */
+        .activity-link {
+            display: inline-block;
+            background-color: #2563eb; /* Primary blue */
+            color: white;
+            padding: 1.2rem 2.5rem; /* Larger padding for button */
+            border-radius: 0.75rem;
+            font-weight: 700;
+            font-size: 1.2rem; /* Larger font size for button */
+            text-decoration: none;
+            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+            box-shadow: 0 6px 15px -3px rgba(0, 0, 0, 0.15); /* More pronounced shadow */
+        }
+
+        .activity-link:hover {
+            background-color: #1d4ed8; /* Darker blue on hover */
+            transform: translateY(-5px); /* More pronounced lift effect */
+            box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.25); /* Larger shadow on hover */
+        }
+        .activity-link:active {
+            transform: translateY(0);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Footer (Optional, but good practice for full page) */
+        .footer-section {
+            width: 100%;
+            text-align: center;
+            padding: 1.5rem 1rem;
+            margin-top: 3rem; /* Space above footer */
+            color: #64748b; /* Lighter text for footer */
+            font-size: 0.9rem;
+        }
+
+        /* Animations */
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
-        p {
-            font-size: 1.15rem; /* Slightly larger paragraph text */
-            margin-bottom: 3rem; /* Increased space below the text for the button */
-            line-height: 1.6;
-        }
-        .activity-link {
-            display: inline-block;
-            background-color: #2563eb; /* Blue button */
-            color: white;
-            padding: 1rem 2rem;
-            border-radius: 0.75rem; /* Rounded button */
-            font-weight: 700;
-            font-size: 1.1rem;
-            text-decoration: none;
-            transition: background-color 0.3s ease, transform 0.2s ease;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-        }
-        .activity-link:hover {
-            background-color: #1d4ed8;
-            transform: translateY(-3px); /* Lift effect on hover */
-        }
-        .activity-link:active {
-            transform: translateY(0);
+        @keyframes slideInFromTop {
+            from { transform: translateY(-100%); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
         }
 
         /* Responsive adjustments */
-        @media (max-width: 640px) {
-            h1 {
-                font-size: 3rem; /* Adjusted for smaller screens */
-                letter-spacing: -0.02em;
-                margin-bottom: 2rem; /* Adjusted margin for smaller screens */
-                padding: 1rem 0.75rem; /* Less padding on small screens */
+        @media (max-width: 768px) {
+            .header-section {
+                padding: 2rem 1rem;
+                margin-bottom: 2rem;
             }
-            .container {
-                padding: 1.5rem;
-                margin: 0 1rem; /* Ensure horizontal margin on small screens */
+            .header-section h1 {
+                font-size: 3rem; /* Adjusted for medium screens */
             }
-            p {
-                font-size: 1rem;
-                margin-bottom: 2.5rem; /* Adjusted for smaller screens */
+            .content-container {
+                padding: 2rem;
+                margin: 0 1rem;
+            }
+            .content-container p {
+                font-size: 1.1rem;
+                margin-bottom: 3rem;
             }
             .activity-link {
-                padding: 0.8rem 1.5rem;
+                padding: 1rem 2rem;
+                font-size: 1.1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header-section h1 {
+                font-size: 2.2rem; /* Adjusted for small mobile screens */
+                letter-spacing: -0.03em;
+            }
+            .content-container {
+                padding: 1.5rem;
+            }
+            .content-container p {
+                font-size: 1rem;
+                margin-bottom: 2.5rem;
+            }
+            .activity-link {
+                padding: 0.9rem 1.8rem;
                 font-size: 1rem;
             }
         }
     </style>
 </head>
 <body>
-    <h1>Welcome to Mr. Smith's AP Psychology Review Activities!</h1>
-    <div class="container">
+    <header class="header-section">
+        <h1>Welcome to Mr. Smith's AP Psychology Review Activities!</h1>
+    </header>
+
+    <div class="content-container">
         <p>
             Dive into these interactive resources designed to help you master key concepts and prepare for your AP Psychology exam. Let's make learning fun and effective!
         </p>
@@ -111,6 +169,9 @@
         </a>
         -->
     </div>
+
+    <footer class="footer-section">
+        &copy; <script>document.write(new Date().getFullYear())</script> Mr. Smith. All Rights Reserved.
+    </footer>
 </body>
 </html>
-

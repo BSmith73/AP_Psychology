@@ -374,6 +374,8 @@
     ];
 
     let functionsBank, damageBank, activeDropTarget;
+    const SCROLL_ZONE_SIZE = 50; // Pixels from top/bottom to start scrolling
+    const SCROLL_SPEED = 20; // Pixels to scroll per drag event
 
     document.addEventListener('DOMContentLoaded', () => {
         const checkBtn = document.getElementById('check-btn');
@@ -448,10 +450,24 @@
 
         document.addEventListener('dragover', (e) => {
             e.preventDefault();
-            const target = e.target.closest('.drop-target');
-            const draggedType = e.dataTransfer.getData('text/item-type');
-            if (target && target.dataset.columnType === draggedType) {
-                target.classList.add('drag-over');
+            const draggingItem = document.querySelector('.word-bank-item.dragging');
+            if (draggingItem) {
+                const target = e.target.closest('.drop-target');
+                const draggedType = e.dataTransfer.getData('text/item-type');
+                if (target && target.dataset.columnType === draggedType) {
+                    target.classList.add('drag-over');
+                }
+                
+                // Autoscroll logic
+                const y = e.clientY;
+                const topZone = SCROLL_ZONE_SIZE;
+                const bottomZone = window.innerHeight - SCROLL_ZONE_SIZE;
+                
+                if (y < topZone) {
+                    window.scrollBy(0, -SCROLL_SPEED);
+                } else if (y > bottomZone) {
+                    window.scrollBy(0, SCROLL_SPEED);
+                }
             }
         });
 
@@ -485,7 +501,7 @@
             const target = e.target.closest('.drop-target');
             if (target && target.children.length === 0) {
                 activeDropTarget = target;
-                showModal(target.dataset.columnType);
+                showModal(target.dataset.column-type);
             }
         });
 
@@ -549,7 +565,7 @@
 
         dropTargets.forEach(target => {
             const rowIndex = target.dataset.rowIndex;
-            const colType = target.dataset.columnType;
+            const colType = target.dataset.column-type;
             const correctText = worksheetData[rowIndex][colType];
             const placedItem = target.querySelector('.word-bank-item');
 
@@ -582,4 +598,3 @@
 </script>
 </body>
 </html>
-```

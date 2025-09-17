@@ -86,27 +86,41 @@
             width: 100%;
             border-collapse: separate;
             border-spacing: 0 0.5rem;
+            table-layout: fixed;
+        }
+        
+        thead th,
+        tbody td {
+            padding: 1rem;
+            border-radius: 0.5rem;
+            vertical-align: top;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+        
+        thead th:nth-child(1),
+        tbody td:nth-child(1) {
+            width: 25%;
+        }
+
+        thead th:nth-child(2),
+        tbody td:nth-child(2) {
+            width: 37.5%;
+        }
+
+        thead th:nth-child(3),
+        tbody td:nth-child(3) {
+            width: 37.5%;
         }
 
         thead th {
             background-color: #e0f2fe; /* Lighter blue for table header */
             color: #1e293b;
             font-weight: bold;
-            padding: 1rem;
             text-align: left;
-            border-radius: 0.5rem;
         }
 
         tbody tr {
             background-color: #f8fafc;
-            border-radius: 0.5rem;
-        }
-
-        tbody td {
-            padding: 1rem;
-            border-radius: 0.5rem;
-            vertical-align: top;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
         }
 
         .brain-region {
@@ -630,3 +644,4 @@
 </script>
 </body>
 </html>
+

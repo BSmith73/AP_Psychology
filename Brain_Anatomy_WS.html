@@ -227,9 +227,41 @@
         #modal-options-list li:hover {
             background-color: #cbd5e1;
         }
+        
+        /* New styling for the home button */
+        .home-button {
+            position: absolute;
+            top: 1.5rem;
+            left: 1.5rem;
+            background-color: #475569;
+            color: white;
+            padding: 0.75rem 1rem;
+            border-radius: 0.5rem;
+            font-weight: bold;
+            font-size: 0.9rem;
+            text-decoration: none;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.2s, transform 0.2s;
+        }
+
+        .home-button:hover {
+            background-color: #334155;
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            .home-button {
+                top: 1rem;
+                left: 1rem;
+                padding: 0.6rem 0.8rem;
+            }
+        }
     </style>
 </head>
 <body>
+<a href="index.html" class="home-button">
+    &lt; Back to Home
+</a>
 <div class="container">
     <div class="header">
         <h1>Brain Regions & Functions Worksheet</h1>
@@ -486,7 +518,7 @@
             const draggedType = e.dataTransfer.getData('text/item-type');
             const draggedItem = document.querySelector(`.word-bank-item[data-original-text="${draggedText}"]`);
 
-            if (target && target.dataset.columnType === draggedType) {
+            if (target && target.dataset.column-type === draggedType) {
                 target.classList.remove('drag-over');
                 placeItemInTarget(draggedItem, target);
             } else if (draggedItem) {
@@ -501,7 +533,7 @@
             const target = e.target.closest('.drop-target');
             if (target && target.children.length === 0) {
                 activeDropTarget = target;
-                showModal(target.dataset.column-type);
+                showModal(target.dataset.columnType);
             }
         });
 
@@ -565,7 +597,7 @@
 
         dropTargets.forEach(target => {
             const rowIndex = target.dataset.rowIndex;
-            const colType = target.dataset.column-type;
+            const colType = target.dataset.columnType;
             const correctText = worksheetData[rowIndex][colType];
             const placedItem = target.querySelector('.word-bank-item');
 

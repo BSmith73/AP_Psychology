@@ -207,7 +207,7 @@
             padding: 2rem;
             border-radius: 1rem;
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-            max-width: 500px;
+            max-width: 900px;
             width: 90%;
             position: relative;
         }
@@ -532,7 +532,7 @@
             const draggedType = e.dataTransfer.getData('text/item-type');
             const draggedItem = document.querySelector(`.word-bank-item[data-original-text="${draggedText}"]`);
 
-            if (target && target.dataset.column-type === draggedType) {
+            if (target && target.dataset.columnType === draggedType) {
                 target.classList.remove('drag-over');
                 placeItemInTarget(draggedItem, target);
             } else if (draggedItem) {
@@ -644,4 +644,3 @@
 </script>
 </body>
 </html>
-
